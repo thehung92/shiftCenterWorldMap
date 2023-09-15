@@ -1,0 +1,14 @@
+citHeader("If you use this package in your research, please cite.",
+  "To cite shiftCenterWorldMap in publications use:")
+
+citEntry(
+  entry    = "Misc",
+  title    = "shiftCenterWorldMap",
+  author   = "Hung TT Nguyen",
+  year     = 2023,
+  url      = "https://github.com/thehung92/shiftCenterWorldMap",
+  textVersion = paste("Hung TT Nguyen (2023)",
+  "shiftCenterWorldMap.",
+  "url: github.com/thehung92/shiftCenterWorldMap"
+  )
+)
