@@ -1,11 +1,23 @@
 Package: shiftCenterWorldMap
 Type: Package
-Title: What the Package Does (Title Case)
+Title: shift the center of world map plot in ggplot in robinson projection
 Version: 0.1.0
 Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Maintainer: The package maintainer <thehung92phuyen@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Depends:
+    R (>= 3.6.3)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    magrittr,
+    rnaturalearth,
+    sf,
+    tmaptools
