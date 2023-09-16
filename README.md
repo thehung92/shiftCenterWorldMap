@@ -6,7 +6,14 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of shiftCenterWorldMap is to …
+The goal of shiftCenterWorldMap is to vizualize a fish-eyed world
+(robinson projection) with the center of the map on your area of
+interest.
+
+<figure>
+<img src="man/figures/animation-world.gif" alt="rotate-world" />
+<figcaption aria-hidden="true">rotate-world</figcaption>
+</figure>
 
 ## Installation
 
