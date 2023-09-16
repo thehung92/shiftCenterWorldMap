@@ -1,0 +1,89 @@
+---
+title: "Animate rotating world map"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Animate rotating world map}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(shiftCenterWorldMap)
+library(tidyverse)
+library(sf)
+```
+
+## plot world map with custom center
+
+```{r}
+# countries
+center = 100
+sf.world = create_world_map_custom_center(center)
+# ocean
+sf.ocean = create_ocean_background(center)
+# declare the robinson project with shifted center
+myCrs = paste0('+proj=robin +lon_0=', center, ' +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84')
+# plot
+map = ggplot() +
+  geom_sf(data = sf.ocean, fill ="lightskyblue", alpha = 0.5) +
+  geom_sf(data = sf.world) +
+  coord_sf(crs = myCrs, default_crs = st_crs(4326)) +
+  theme(panel.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank())
+map
+```
+
+## plot multiple world map with center moving on the equator with 5˚ interval
+
+```{r, eval=FALSE,echo=TRUE}
+# function to plot and save
+plot_map_with_moving_center <- function(center) {
+  # countries
+  sf.world = create_world_map_custom_center(center)
+  # ocean
+  sf.ocean = create_ocean_background(center)
+  # declare the robinson project with shifted center
+  myCrs = paste0('+proj=robin +lon_0=', center, ' +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84')
+  # plot and save
+  map = ggplot() +
+    geom_sf(data = sf.ocean, fill ="lightskyblue", alpha = 0.5) +
+    geom_sf(data = sf.world) +
+    coord_sf(crs = myCrs, default_crs = st_crs(4326)) +
+    theme(panel.background = element_blank(),
+          axis.ticks = element_blank(),
+          axis.text = element_blank())
+  ggsave(paste0("tmp/world.", center,".png"), plot = map,
+         units = "px", width = 800, height = 400, bg = "transparent")
+}
+#
+centers = seq(-175, 180, 5)
+for (center in centers) {
+  plot_map_with_moving_center(center)
+}
+```
+
+## read the png img and animate with gifski
+
+```{r, eval=FALSE,echo=TRUE}
+library(gifski)
+infiles = paste0("tmp/world.", centers,".png")
+gifski(infiles,
+       gif_file = "man/figures/animation-world.gif",
+       width = 800, height = 400, delay = 0.2)
+```
+
+## gif take a long time to render so here's the pre-rendered result
+
+```{r, echo=FALSE,eval=FALSE}
+# still bug # need to find appropriate path
+knitr::include_graphics("man/figures/animation-world.gif")
+```
+

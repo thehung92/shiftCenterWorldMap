@@ -1,0 +1,27 @@
+Package: shiftCenterWorldMap
+Type: Package
+Title: shift the center of world map plot in ggplot in robinson projection
+Version: 0.2.0
+Author: Hung TT Nguyen
+Maintainer: Hung TT Nguyen <thehung92phuyen@gmail.com>
+Description: generate world map sf object
+    vignette on animation
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.6.3)
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    magrittr,
+    rnaturalearth,
+    sf,
+    tmaptools
+VignetteBuilder: knitr
+URL: https://thehung92.github.io/shiftCenterWorldMap/
