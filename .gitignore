@@ -4,3 +4,7 @@
 .Ruserdata
 *.Rproj
 log.md
+log.Rmd
+docs
+inst/doc
+tmp
