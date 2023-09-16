@@ -15,12 +15,10 @@ interest.
 <figcaption aria-hidden="true">rotate-world</figcaption>
 </figure>
 
-WARNING: the animation is not part of the package feature :D
-
 ## Installation
 
 You can install the development version of shiftCenterWorldMap from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/thehung92/shiftCenterWorldMap) with:
 
 ``` r
 # install.packages("devtools")
