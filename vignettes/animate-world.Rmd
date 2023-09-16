@@ -82,7 +82,8 @@ gifski(infiles,
 
 ## gif take a long time to render so here's the pre-rendered result
 
-```{r, echo=FALSE}
+```{r, echo=FALSE,eval=FALSE}
+# still bug # need to find appropriate path
 knitr::include_graphics("man/figures/animation-world.gif")
 ```
 

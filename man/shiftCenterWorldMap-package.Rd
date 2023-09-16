@@ -6,6 +6,13 @@
 \alias{shiftCenterWorldMap-package}
 \title{shiftCenterWorldMap: shift the center of world map plot in ggplot in robinson projection}
 \description{
-More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
+generate world map sf object vignette on animation
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://thehung92.github.io/shiftCenterWorldMap/}
+}
+
 }
 \keyword{internal}
