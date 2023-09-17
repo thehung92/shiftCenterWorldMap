@@ -8,7 +8,8 @@
 
 The goal of shiftCenterWorldMap is to vizualize a fish-eyed world
 (robinson projection) with the center of the map on your area of
-interest. The edge of region is also densify with st_segmentize.
+interest. The edge of region is also densify with st_segmentize. \[shift
+center world map along equator\]
 
 <figure>
 <img src="man/figures/animation-world.gif" alt="rotate-world" />
@@ -104,4 +105,3 @@ map2
 
 the end result is a ggplot object and you should be able to save it to
 file with ggsave
-# shiftCenterWorldMap
