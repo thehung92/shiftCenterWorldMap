@@ -28,7 +28,7 @@
     
     <a class="navbar-brand me-2" href="index.html">shiftCenterWorldMap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +44,7 @@
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="articles/animate-world.html">Animate rotating world map</a>
+    <a class="dropdown-item" href="articles/smooth-polygon.html">Smooth the polygon at the sliced edge for projection</a>
   </div>
 </li>
       </ul>
@@ -63,7 +64,7 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of shiftCenterWorldMap is to vizualize a fish-eyed world (robinson projection) with the center of the map on your area of interest.</p>
+<p>The goal of shiftCenterWorldMap is to vizualize a fish-eyed world (robinson projection) with the center of the map on your area of interest. The edge of region is also densify with st_segmentize. [shift center world map along equator]</p>
 <figure><img src="reference/figures/animation-world.gif" alt="rotate-world"><figcaption aria-hidden="true">
 rotate-world
 </figcaption></figure><div class="section level2">
@@ -100,6 +101,9 @@ rotate-world
 <span><span class="co">#&gt; Warning: attribute variables are assumed to be spatially constant throughout</span></span>
 <span><span class="co">#&gt; all geometries</span></span>
 <span><span class="co">#&gt; Spherical geometry (s2) switched on</span></span>
+<span><span class="co">#&gt; Spherical geometry (s2) switched off</span></span>
+<span><span class="co">#&gt; Warning in st_cast.sf(., to = "POLYGON"): repeating attributes for all</span></span>
+<span><span class="co">#&gt; sub-geometries for which they may not be constant</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">sf.world</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-world-1.png" width="100%"></p>
