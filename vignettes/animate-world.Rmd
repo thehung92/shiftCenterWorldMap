@@ -60,6 +60,7 @@ plot_map_with_moving_center <- function(center) {
     theme(panel.background = element_blank(),
           axis.ticks = element_blank(),
           axis.text = element_blank())
+  # print(map)
   ggsave(paste0("tmp/world.", center,".png"), plot = map,
          units = "px", width = 800, height = 400, bg = "transparent")
 }
@@ -74,10 +75,39 @@ for (center in centers) {
 
 ```{r, eval=FALSE,echo=TRUE}
 library(gifski)
+# gifski cannot make transparent gif
 infiles = paste0("tmp/world.", centers,".png")
 gifski(infiles,
        gif_file = "man/figures/animation-world.gif",
        width = 800, height = 400, delay = 0.2)
+# try save_gif with expr to plot
+plot_map_with_moving_center <- function(center) {
+  # countries
+  sf.world = create_world_map_custom_center(center)
+  # ocean
+  sf.ocean = create_ocean_background(center)
+  # declare the robinson project with shifted center
+  myCrs = paste0('+proj=robin +lon_0=', center, ' +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84')
+  # plot and save
+  map = ggplot() +
+    geom_sf(data = sf.ocean, fill ="lightskyblue", alpha = 0.5) +
+    geom_sf(data = sf.world) +
+    coord_sf(crs = myCrs, default_crs = st_crs(4326)) +
+    theme(panel.background = element_blank(),
+          axis.ticks = element_blank(),
+          axis.text = element_blank())
+  print(map)
+}
+# plot gif expr
+plot_gif_expr <- function(){
+  centers = seq(-175, 180, 5)
+  for (center in centers) {
+    plot_map_with_moving_center(center)
+  }
+}
+#
+save_gif(expr = {plot_gif_expr()}, gif_file = "man/figures/animation-world.gif",
+         width = 800, height = 400, delay = 0.2, bg = "transparent")
 ```
 
 ## gif take a long time to render so here's the pre-rendered result
