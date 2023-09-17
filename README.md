@@ -8,7 +8,7 @@
 
 The goal of shiftCenterWorldMap is to vizualize a fish-eyed world
 (robinson projection) with the center of the map on your area of
-interest.
+interest. The edge of region is also densify with st_segmentize.
 
 <figure>
 <img src="man/figures/animation-world.gif" alt="rotate-world" />
@@ -52,6 +52,9 @@ sf.world = create_world_map_custom_center(center)
 #> Warning: attribute variables are assumed to be spatially constant throughout
 #> all geometries
 #> Spherical geometry (s2) switched on
+#> Spherical geometry (s2) switched off
+#> Warning in st_cast.sf(., to = "POLYGON"): repeating attributes for all
+#> sub-geometries for which they may not be constant
 ggplot() +
   geom_sf(data = sf.world)
 ```
@@ -101,3 +104,4 @@ map2
 
 the end result is a ggplot object and you should be able to save it to
 file with ggsave
+# shiftCenterWorldMap

@@ -8,3 +8,5 @@ log.Rmd
 docs
 inst/doc
 tmp
+*.Rproj
+log.md
