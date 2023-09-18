@@ -4,6 +4,8 @@
 # shiftCenterWorldMap
 
 <!-- badges: start -->
+
+[![DOI](https://zenodo.org/badge/692045656.svg)](https://zenodo.org/badge/latestdoi/692045656)
 <!-- badges: end -->
 
 The goal of shiftCenterWorldMap is to vizualize a fish-eyed world
