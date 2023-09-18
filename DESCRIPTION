@@ -1,7 +1,7 @@
 Package: shiftCenterWorldMap
 Type: Package
 Title: shift the center of world map plot in ggplot in robinson projection
-Version: 0.4.0
+Version: 0.4.1
 Author: Hung TT Nguyen
 Maintainer: Hung TT Nguyen <thehung92phuyen@gmail.com>
 Description: generate world map sf object
