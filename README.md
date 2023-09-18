@@ -29,7 +29,9 @@ devtools::install_github("thehung92/shiftCenterWorldMap")
 ## Example
 
 Create world map in robinson project with the center at lon:lat=100:0
-and plot with ggplot
+and plot with ggplot. If the code does not work, try to read the error
+message and see which library is not installed in your environment and
+try to install them with `install.packages()`
 
 ``` r
 library(shiftCenterWorldMap)
